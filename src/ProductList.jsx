@@ -319,18 +319,18 @@ function ProductList({ onHomeClick }) {
     <div>
       <div className="navbar" style={styleObj}>
         <div className="tag">
-          <div className="luxury">
+          <a href="/" className="luxury" onClick={(e) => handleHomeClick(e)}>
             <img
               src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png"
               alt=""
             />
-            <a href="/" onClick={(e) => handleHomeClick(e)}>
+            <div>
               <div>
                 <h3 style={{ color: "white" }}>Paradise Nursery</h3>
                 <i style={{ color: "white" }}>Where Green Meets Serenity</i>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         <div style={styleObjUl}>
           <div>
@@ -341,7 +341,7 @@ function ProductList({ onHomeClick }) {
           </div>
           <div>
             <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
-              <div style={{ position: "relative", display: "inline-block" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
@@ -360,20 +360,7 @@ function ProductList({ onHomeClick }) {
                     strokeWidth="2"
                   />
                 </svg>
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "45%",
-                    right: "26%",
-                    transform: "translate(-50%, -50%)",
-                    color: "#faf9f9",
-                    fontSize: "28px",
-                    fontWeight: "bold",
-                    pointerEvents: "none",
-                  }}
-                >
-                  {totalQuantity()}
-                </span>
+                <span>{totalQuantity()}</span>
               </div>
             </a>
           </div>
